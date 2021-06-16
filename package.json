@@ -4,7 +4,12 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron --inspect=8888 .",
+    "make": "electron-packager ./ electron-quick-start --platform=win32 --arch=x64 --out=./dist  --app-version 1.0.0 --overwrite --icon=./myicon.ico",
+    "hot": ".\\node_modules\\.bin\\gulp watch:electron"
+  },
+  "build": {
+    "appId": "com.example.app"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -18,5 +23,10 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^13.1.1"
+  },
+  "dependencies": {
+    "electron-connect": "^0.6.3",
+    "electron-packager": "^15.2.0",
+    "gulp": "^4.0.2"
   }
 }
